@@ -485,56 +485,163 @@ footer::before{
 
 /* ══ MOBILE RESPONSIVE ══ */
 @media(max-width:480px){
-  section{padding:4rem 1.2rem}
+  /* 🔒 Глобальная защита от горизонтального скролла */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100vw;
+    touch-action: pan-y;
+  }
+  
+  section{
+    padding:4rem 1.2rem;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
   h2{font-size:1.85rem;margin-bottom:1.4rem}
-  .wrap{padding:0}
+  .wrap{padding:0; width: 100%; max-width: 100%;}
 
   /* hero */
+  #hero{
+    overflow-x: hidden;
+    contain: layout;
+  }
   .hero-body{padding:5rem 1.2rem 2rem}
-  .pols{margin-bottom:2rem}
-  .h-tag{font-size:rem;letter-spacing:.2em}
+  .pols{
+    margin-bottom:2rem;
+    padding: 0 5px; /* отступ для трансформаций */
+    overflow: visible;
+  }
+  /* 🔒 Фикс полярондов — отключаем поворот на мобильных */
+  .pol-a, .pol-b {
+    transform: rotate(0deg) translateX(0) !important;
+  }
+  .pol:hover, .ps:hover {
+    transform: scale(1.02) !important;
+  }
+  
+  .h-tag{font-size: .7rem; letter-spacing:.2em} /* ← была ошибка: font-size:rem */
   .h-date{font-size:1.8rem}
   .h-place{font-size:.7rem;letter-spacing:.12em}
   .h-rule{margin:1.2rem auto}
 
+  /* 🔒 Ограничиваем фоновый градиент, чтобы не вылезал */
+  #hero::before {
+    width: 100vmax;
+    height: 100vmax;
+    right: -10%;
+    bottom: -5%;
+    contain: strict;
+  }
+
   /* countdown */
+  #countdown{
+    overflow-x: hidden;
+    contain: layout;
+  }
   .timer{gap:.6rem}
   .tu{min-width:48px}
   .tsep{font-size:2rem}
+  /* 🔒 Фикс фонового круга в countdown */
+  #countdown::before{
+    width: 100vmax;
+    height: 100vmax;
+    contain: strict;
+  }
 
   /* story polaroids */
-  .pg{gap:.5rem}
-  .ps{width:clamp(110px,40vw,150px)}
+  .pg{
+    gap:.5rem;
+    padding: 0 5px;
+  }
+  .ps{
+    width:clamp(110px,40vw,150px);
+    /* 🔒 Отключаем поворот на мобильных */
+    transform: rotate(0deg) !important;
+  }
+  .ps:hover{
+    transform: scale(1.02) !important;
+  }
 
   /* program */
+  #program{overflow-x: hidden;}
+  .timeline{
+    overflow-x: hidden;
+    contain: layout;
+  }
   .timeline::before{left:50px}
-  .tlr{grid-template-columns:42px 22px 1fr;gap:0 8px;padding-bottom:2rem}
+  .tlr{
+    grid-template-columns:42px 22px 1fr;
+    gap:0 8px;
+    padding-bottom:2rem;
+    min-width: 0; /* 🔒 важно для гридов */
+  }
   .tlt{font-size: 1rem; padding-top: 3px}
-  .tlti{font-size:1 rem; padding-top: 2px}
+  .tlti{font-size:1rem; padding-top: 2px} /* ← была ошибка: font-size:1 rem */
   .tlde{font-size:.78rem}
 
   /* dresscode */
+  #dresscode{overflow-x: hidden;}
   .palette{gap:1.4rem}
   .swatch{width:52px}
   .sw-circle{width:44px;height:44px}
 
   /* venue */
+  #venue{overflow-x: hidden;}
   .vg{gap:1.4rem}
   .v-name{font-size:1.35rem}
+  .v-photo{
+    overflow: hidden;
+    contain: layout;
+  }
 
   /* rsvp */
+  #rsvp{overflow-x: hidden;}
   .rsvp-card{padding:1.4rem 1.2rem}
   .choice{padding:.45rem .7rem;font-size:.58rem}
   .btn-submit{font-size:.6rem;letter-spacing:.18em}
 
   /* footer */
-  footer{padding:4rem 1.5rem 2.5rem}
+  footer{
+    padding:4rem 1.5rem 2.5rem;
+    overflow-x: hidden;
+    contain: layout;
+  }
+  /* 🔒 Фикс фонового круга в футере */
+  footer::before{
+    width: 100vmax;
+    height: 100vmax;
+    bottom: -30%;
+    contain: strict;
+  }
+  
+  /* 🔒 Блокируем горизонтальный свайп на тач-устройствах */
+  @media (hover: none) and (pointer: coarse) {
+    body {
+      overscroll-behavior-x: none;
+    }
+    a, button, input, select, .choice, .v-btn, .btn-submit {
+      touch-action: pan-y;
+    }
+  }
 }
 
 @media(max-width:360px){
   .h-names{font-size:1.8rem}
-  .pols{gap:0}
+  .pols{gap:0; padding: 0 3px;}
   .tn{font-size:2.8rem}
+  
+  /* 🔒 Дополнительные фиксы для очень узких экранов */
+  .pol, .ps {
+    width: clamp(100px, 38vw, 140px);
+  }
+  .timeline::before {
+    left: 42px;
+  }
+  .tlr {
+    grid-template-columns: 38px 20px 1fr;
+  }
 }
 </style>
 </head>
