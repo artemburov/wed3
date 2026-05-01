@@ -120,7 +120,7 @@ nav.on{
 .p-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:absolute;inset:0}
 .p-ph svg{opacity:.2}
 .p-ph span{font-family:'Caveat',cursive;font-size:.72rem;color:var(--soft)}
-.p-name{display:flex;align-items:center;justify-content:center;height:clamp(34px,7vw,48px);font-family:'DM Sans',sans-serif;font-weight:400;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.p-name{display:flex;align-items:center;justify-content:center;height:clamp(34px,7vw,48px);font-family:'DM Sans',sans-serif;font-weight:400;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
 
 /* hero typography */
 .h-tag{font-size:rem;letter-spacing:.28em;text-transform:uppercase;color:var(--soft);margin-bottom:1.2rem;opacity:0;animation:up .8s .1s ease forwards}
@@ -138,12 +138,12 @@ nav.on{
 }
 .h-date{
   font-family:'Cormorant Garamond',serif;font-weight:300;
-  font-size:clamp(1rem,3vw,1.5rem);color:var(--mid);
+  font-size:clamp(1rem,3vw,1.8rem);color:var(--mid);
   letter-spacing:.04em;
   opacity:0;animation:up .8s .7s ease forwards;
 }
 .h-place{
-  font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;
+  font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--soft);margin-top:.4rem;
   opacity:0;animation:up .8s .85s ease forwards;
 }
@@ -173,7 +173,7 @@ section{padding:7rem 2rem;width:100%}
 .wrap{max-width:760px;margin:0 auto;width:100%}
 
 .label{
-  display:inline-block;font-size:.66rem;letter-spacing:.22em;
+  display:inline-block;font-size:.7rem;letter-spacing:.22em;
   text-transform:uppercase;color:var(--gold);
   margin-bottom:.8rem;
 }
@@ -225,7 +225,7 @@ h2{
 
 /* ══ STORY ══ */
 #story{background:var(--white)}
-.s-lead{font-size:.95rem;line-height:2;color:var(--mid);max-width:480px;margin-bottom:3rem}
+.s-lead{font-size: rem;line-height:2;color:var(--mid);max-width:480px;margin-bottom:3rem}
 
 .pg {
   display: flex;
@@ -334,7 +334,7 @@ h2{
 .tlr.on{opacity:1;transform:none}
 @media(max-width:440px){.tlr{grid-template-columns:46px 24px 1fr;gap:0 10px}}
 
-.tlt{font-size:rem;letter-spacing:.06em;color:var(--soft);text-align:right;padding-top:3px}
+.tlt{font-size: 1.2rem;letter-spacing:.06em;color:var(--soft);text-align:right;padding-top:3px}
 .tlnode{display:flex;flex-direction:column;align-items:center;padding-top:9.5px}
 .tldot{
   width:9px;height:9px;border-radius:50%;
@@ -343,8 +343,8 @@ h2{
 }
 .tlr:hover .tldot{background:var(--gold);border-color:var(--gold)}
 .tlem{font-size:.85rem;margin-top:5px;line-height:1}
-.tlti{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.2rem;margin-bottom:3px;line-height:1.2;color:var(--ink); padding-top: 2px}
-.tlde{font-size:.82rem;color:var(--mid);line-height:1.7}
+.tlti{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.4rem;margin-bottom:3px;line-height:1.2;color:var(--ink); padding-top: 2px}
+.tlde{font-size: 1.2 rem;color:var(--mid);line-height:1.7}
 
 /* ══ DETAILS ══ */
 #details{background:var(--white)}
@@ -492,9 +492,9 @@ footer::before{
   /* hero */
   .hero-body{padding:5rem 1.2rem 2rem}
   .pols{margin-bottom:2rem}
-  .h-tag{font-size:.56rem;letter-spacing:.2em}
-  .h-date{font-size:1.1rem}
-  .h-place{font-size:.56rem;letter-spacing:.12em}
+  .h-tag{font-size:rem;letter-spacing:.2em}
+  .h-date{font-size:1.8rem}
+  .h-place{font-size:.7rem;letter-spacing:.12em}
   .h-rule{margin:1.2rem auto}
 
   /* countdown */
@@ -623,6 +623,7 @@ footer::before{
       <svg class="hsvg" width="12" height="11" viewBox="0 0 12 11" fill="none" style="margin-left:4px"><path d="M6 10.2C6 10.2 1 6.5 1 3C1 1.5 2.1 1 3.3 1C4.3 1 5.2 1.6 6 2.7C6.8 1.6 7.7 1 8.7 1C9.9 1 11 1.5 11 3C11 6.5 6 10.2 6 10.2Z" stroke="#b89a6a" stroke-width="1.1" fill="none"/></svg>
     </p>
     <div class="pg">
+	  <div class="ps rv" style="--rot:-3deg;transition-delay:.04s"><div class="tp" style="--tr:-3deg"></div><div class="ps-img"><img src="ph/0.jpg"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="2" stroke="#9a9288" stroke-width="1" stroke-dasharray="3 2"/><circle cx="12" cy="9" r="4" stroke="#9a9288" stroke-width="1"/><path d="M3 21 Q7.5 15 12 17 Q16.5 19 21 13" stroke="#9a9288" stroke-width="1" fill="none"/></svg><span>ваше фото</span></div></div><div class="ps-cap"></div></div>
       <div class="ps rv" style="--rot:-3deg;transition-delay:.04s"><div class="tp" style="--tr:-3deg"></div><div class="ps-img"><img src="ph/1.jpg"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="2" stroke="#9a9288" stroke-width="1" stroke-dasharray="3 2"/><circle cx="12" cy="9" r="4" stroke="#9a9288" stroke-width="1"/><path d="M3 21 Q7.5 15 12 17 Q16.5 19 21 13" stroke="#9a9288" stroke-width="1" fill="none"/></svg><span>ваше фото</span></div></div><div class="ps-cap"></div></div>
       <div class="ps rv" style="--rot:1.5deg;transition-delay:.1s"><div class="tp" style="--tr:2deg"></div><div class="ps-img"><img src="ph/2.jpg"><div class="ph"><svg width="24" height="21" viewBox="0 0 24 21" fill="none"><path d="M12 19.5C12 19.5 2 13 2 7C2 4.2 4.2 2.5 7 2.5C9 2.5 11 3.7 12 5.8C13 3.7 15 2.5 17 2.5C19.8 2.5 22 4.2 22 7C22 13 12 19.5 12 19.5Z" stroke="#b89a6a" stroke-width="1" fill="none"/></svg><span>ваше фото</span></div></div><div class="ps-cap"></div></div>
       <div class="ps rv" style="--rot:-1.5deg;transition-delay:.16s"><div class="tp" style="--tr:-1deg"></div><div class="ps-img"><img src="ph/3.jpg"><div class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#9a9288" stroke-width="1" stroke-dasharray="4 2"/><path d="M7.5 12L10.5 15L16.5 9" stroke="#b89a6a" stroke-width="1.4" fill="none"/></svg><span>ваше фото</span></div></div><div class="ps-cap"></div></div>
