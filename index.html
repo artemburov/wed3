@@ -8,6 +8,33 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
+.sub-label-with-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+
+.info-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+.sub-text {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.4;
+  font-style: italic; /* ✅ Текст теперь курсивом */
+}
+
+/* Можно выделить важную часть цветом, если нужно */
+.sub-text strong {
+  color: #b89a6a; /* Ваш золотой цвет */
+  font-weight: 500;
+}
+
 :root{
   --cream:  #f5f0e8;
   --white:  #fefefe;
@@ -732,10 +759,25 @@ footer::before{
           <input type="hidden" name="attending" id="attInput" required>
         </div>
 
-        <div class="fg">
-          <label class="fl">С кем придёте?</label>
-          <input type="text" name="guests" class="fi" placeholder="Один / С парой / С детьми">
-        </div>
+<div class="fg">
+  <label class="fl">С кем придёте?</label>
+  
+  <!-- Подсказка с иконкой -->
+  <div class="sub-label-with-icon">
+    <!-- Иконка Info (Lucide style) -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b89a6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 16v-4"></path>
+      <path d="M12 8h.01"></path>
+    </svg>
+    
+    <span class="sub-text">
+      Для сохранения камерности и атмосферы мы хотим разделить этот день только с теми, кто уже стал частью нашего пути.
+    </span>
+  </div>
+  
+  <input type="text" name="guests" class="fi" placeholder="Один / С парой / С детьми">
+</div>
 
         <div class="fg">
           <label class="fl">Алкоголь (можно несколько)</label>
