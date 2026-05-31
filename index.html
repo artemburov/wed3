@@ -294,7 +294,11 @@ h2{
 
 /* Скрываем плейсхолдер полностью, чтобы он не мешал */
 .ps-img .ph {
-  display: none; 
+   image-rendering: -webkit-optimize-contrast; /* Для Chrome/Safari */
+  image-rendering: crisp-edges; /* Стандарт */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Если нужно показывать плейсхолдер ТОЛЬКО если картинка битая, 
@@ -831,8 +835,8 @@ document.querySelectorAll('.rv,.rvl,.rvr,.tlr,.dc').forEach(el => obs.observe(el
 
 /* ── countdown timer ── */
 function tick(){
-  // Дата свадьбы: 8 августа 2026, 16:00 (по Москве)
-  const weddingDate = new Date('2026-08-08T16:00:00+03:00'); 
+  // Дата свадьбы: 8 августа 2026, 16:00 (смещение +4 часа от UTC)
+  const weddingDate = new Date('2026-08-08T16:00:00+04:00'); 
   const diff = weddingDate - new Date();
   
   if(diff <= 0){ 
